@@ -3,7 +3,7 @@ package marsrover.instruction;
 import marsrover.Rover;
 
 public interface Instruction {
-    String letter();
+    String code();
 
     void execute(Rover rover);
 }

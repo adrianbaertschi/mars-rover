@@ -10,16 +10,16 @@ public class InstructionParser {
             new LeftInstruction(),
             new RightInstruction());
 
-    public List<Instruction> parseInstructions(String instructions) {
-        return Arrays.stream(instructions.split(""))
+    public List<Instruction> parseInstructions(String instructionCodes) {
+        return Arrays.stream(instructionCodes.split(""))
                 .map(this::findInstruction)
                 .collect(Collectors.toList());
     }
 
     private Instruction findInstruction(String instructionCode) {
         return this.instructionList.stream()
-                .filter(instruction -> instruction.letter().equals(instructionCode))
+                .filter(instruction -> instruction.code().equals(instructionCode))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Illegal instruction"));
+                .orElseThrow(() -> new IllegalArgumentException("Illegal instruction: " + instructionCode));
     }
 }

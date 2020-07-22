@@ -5,7 +5,7 @@ import marsrover.Rover;
 class LeftInstruction implements Instruction {
 
     @Override
-    public String letter() {
+    public String code() {
         return "L";
     }
 

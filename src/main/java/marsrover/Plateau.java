@@ -1,9 +1,6 @@
 package marsrover;
 
-import marsrover.instruction.Instruction;
 import marsrover.instruction.InstructionParser;
-
-import java.util.List;
 
 public class Plateau {
     private final Rover rover;
@@ -14,8 +11,7 @@ public class Plateau {
     }
 
     public void sendInstructions(String instructions) {
-        List<Instruction> collect = instructionParser.parseInstructions(instructions);
-        collect.forEach(instruction -> instruction.execute(rover));
+        instructionParser.parseInstructions(instructions).forEach(instruction -> instruction.execute(rover));
     }
 
     public String printRover() {
