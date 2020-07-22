@@ -1,3 +1,5 @@
+package marsrover;
+
 public class Rover {
     private int x;
     private int y;
@@ -15,7 +17,6 @@ public class Rover {
             case E -> this.x++;
             case S -> this.y--;
             case W -> this.x--;
-            default -> throw new IllegalStateException("Illegal direction: " + direction);
         }
     }
 

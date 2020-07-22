@@ -1,3 +1,5 @@
+package marsrover;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -44,6 +46,12 @@ public class RoverTest {
         Rover rover = new Rover(1, 1, 'W');
         rover.turnLeft();
         assertEquals("1 1 S", rover.toString());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void illegalDirection_throwsException() {
+        Rover rover = new Rover(1, 1, 'I');
+        rover.turnLeft();
     }
 
     @Test

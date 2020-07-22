@@ -1,3 +1,5 @@
+package marsrover;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,7 +11,7 @@ public class PlateauTest {
         final Rover rover = new Rover(1, 2, 'N');
         final Plateau plateau = new Plateau(rover);
 
-        assertEquals("1 2 N", plateau.roverAsString());
+        assertEquals("1 2 N", plateau.printRover());
     }
 
     @Test
@@ -18,7 +20,7 @@ public class PlateauTest {
         final Plateau plateau = new Plateau(rover);
 
         plateau.sendInstructions("M");
-        assertEquals("1 3 N", plateau.roverAsString());
+        assertEquals("1 3 N", plateau.printRover());
     }
 
     @Test
@@ -27,7 +29,7 @@ public class PlateauTest {
         final Plateau plateau = new Plateau(rover);
 
         plateau.sendInstructions("MMM");
-        assertEquals("4 2 E", plateau.roverAsString());
+        assertEquals("4 2 E", plateau.printRover());
     }
 
     @Test
@@ -36,7 +38,7 @@ public class PlateauTest {
         final Plateau plateau = new Plateau(rover);
 
         plateau.sendInstructions("ML");
-        assertEquals("2 2 N", plateau.roverAsString());
+        assertEquals("2 2 N", plateau.printRover());
     }
 
     @Test
@@ -46,7 +48,7 @@ public class PlateauTest {
 
         plateau.sendInstructions("LMLMLMLMM");
 
-        assertEquals("1 3 N", plateau.roverAsString());
+        assertEquals("1 3 N", plateau.printRover());
     }
 
     @Test
@@ -56,6 +58,6 @@ public class PlateauTest {
 
         plateau.sendInstructions("MMRMMRMRRM");
 
-        assertEquals("5 1 E", plateau.roverAsString());
+        assertEquals("5 1 E", plateau.printRover());
     }
 }
